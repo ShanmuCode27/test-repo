@@ -26,8 +26,8 @@ const processLoginState = async () => {
 
 const updateUI = async () => {
   const isAuthenticated = await auth0.isAuthenticated()
-  // document.getElementById("btn-logout").disabled = !isAuthenticated
-  // document.getElementById("btn-login").disabled = isAuthenticated
+  document.getElementById("btn-logout").disabled = !isAuthenticated
+  document.getElementById("btn-login").disabled = isAuthenticated
   // NEW - add logic to show/hide gated content after authentication
   if (isAuthenticated) {
     document.getElementById("gated-content").classList.remove("hidden")
