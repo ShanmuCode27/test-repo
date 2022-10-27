@@ -36,10 +36,8 @@ const getWeather = (resource) => {
     return new Promise((resolve,reject) => {
         const request = new XMLHttpRequest();
 
+
         request.open('GET', resource);
-        // request.setRequestHeader('cache-control', 'no-cache'); 
-        request.setRequestHeader('Origin', 'http://127.0.0.1:5500');
-        // request.setRequestHeader('If-Modified-Since', 'Wed, 21 Oct 2015 07:28:00 GMT');
         request.send();
 
         request.addEventListener('readystatechange', () => {
@@ -55,65 +53,66 @@ const getWeather = (resource) => {
 }
 
 
+let idCount = 0;
 let city = '';
 let weatherData = [];
 let monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug' , 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
 function createCards(){
-    
+
     let cardImg = [];
     cardImg.push('Weather App.jpg', 'Weather App-2.jpg','Weather App-3.jpg','Weather App-4.jpg','Weather App-5.jpg','Weather App.jpg','Weather App-2.jpg','Weather App-3.jpg');
     console.log(cardImg);
     apiCall();
-    
+
     const setcurrTime = setInterval(() => {
         let newTime = new Date();
-        
-        
+
+
         if(newTime == addMins){
             
             console.log('data fetched from api');
             apiCall();
-            
+
         } else{
             console.log('data fetched from cache');
             // console.log(weatherData);
-            
+
             
         }
+    
+    
+    
         
-        
-    
-        
-    }, 3000);
-    
-    
-    
-    
+     }, 3000);
+
+
+
+
 }
 
 createCards();
 
 
 
-function removeCard(btn) {
-    
+ function removeCard(btn) {
+
     alert("remove this city ? ");
-    
+
     let element = document.getElementById(btn.id);
     console.log(element);
     element.remove();
     
-}
+ }
 
 
-function hideCards(elem){
+ function hideCards(elem){
     // document.getElementById('test').style.display = 'none';
     let current = document.getElementsByClassName(elem.classList);
     console.log(current);
     console.log("ran");
-}
+ }
 
 
 // const myBlogs = ["https://catalins.tech", "https://exampleblog.com"];
@@ -129,16 +128,15 @@ localStorage.setItem('weather', JSON.stringify(weatherData));
 const weather = JSON.parse(localStorage.getItem('weather'));
 
 function newCur(){
-    addMins = new Date();
+     addMins = new Date();
     addMins.setMinutes(addMins.getMinutes() + 5);
 }
 
 window.onload = newCur();
 
 
-let idCount = 0;
 function apiCall () {
-    
+
     let cardImg = [];
     cardImg.push('Weather App.jpg', 'Weather App-2.jpg','Weather App-3.jpg','Weather App-4.jpg','Weather App-5.jpg','Weather App.jpg','Weather App-2.jpg','Weather App-3.jpg');
     console.log(cardImg);
