@@ -18,6 +18,16 @@
         <img src="./images/logo.png" alt="">
         <h2>Weather App</h2>
         <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+        <div class="hidden" id="gated-content">
+          <label>
+            Access token:
+            <pre id="ipt-access-token"></pre>
+          </label>
+          <label>
+            User profile:
+            <pre id="ipt-user-profile"></pre>
+          </label>
+        </div>
       </div>
       <div class="addWeather">
         <!-- <input type="text" placeholder="Enter a city" name="add-weather"> -->
