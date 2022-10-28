@@ -23,7 +23,6 @@ const processLoginState = async () => {
     window.history.replaceState({}, document.title, window.location.pathname)
   }
 }
-
 const updateUI = async () => {
   const isAuthenticated = await auth0.isAuthenticated()
   document.getElementById("btn-logout").disabled = !isAuthenticated
@@ -38,7 +37,7 @@ const updateUI = async () => {
       await auth0.getUser()
     )
   } else {
-    document.getElementById("gated-content").classList.add("hidden")
+    document.getElementById("gated-content").classList.add("hidden");
   }
 }
 
@@ -53,5 +52,3 @@ const logout = () => {
     returnTo: 'https://shanmucode27.github.io/test-repo/index.html',
   })
 }
-
-//just to commit
