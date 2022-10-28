@@ -42,13 +42,9 @@ const updateUI = async () => {
 }
 
 const login = async () => {
-  await auth0.loginWithRedirect({
-    redirect_uri: 'https://shanmucode27.github.io/test-repo/dashboard.html',
-  })
+  await auth0.loginWithRedirect();
 }
 
 const logout = () => {
-  auth0.logout({
-    returnTo: 'https://shanmucode27.github.io/test-repo/index.html',
-  })
+  auth0.logout();
 }
