@@ -91,6 +91,8 @@ window.onload = async () => {
   updateUI();
 
   const isAuthenticated = await auth0Client.isAuthenticated();
+  console.log(auth0Client);
+  console.log(isAuthenticated);
 
   if (isAuthenticated) {
     // show the gated content
