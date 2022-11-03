@@ -148,7 +148,6 @@ body{
     justify-content: space-around;
     align-items: center;
     font-size: 0.8rem;
-    
 }
 
 .weather-type > img{
@@ -261,13 +260,11 @@ footer > p {
     }
 
     .text-within{
-        /* font-size: 0.7rem; */
         justify-content: center;
     }
 
     .weather-type{
         font-size: 0.8rem;
-        
     }
 
 }
